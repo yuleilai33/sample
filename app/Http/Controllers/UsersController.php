@@ -35,6 +35,8 @@ class UsersController extends Controller
         ]);
 
 
+        Auth::login($user);
+
         session() -> flash ('success', 'Hello, your application has been submitted.');
 
         return redirect() -> route('users.show', [$user]);
